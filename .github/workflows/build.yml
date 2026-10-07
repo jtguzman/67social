@@ -153,6 +153,8 @@ jobs:
         uses: taiki-e/install-action@v2
         with:
           tool: cargo-ndk
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
       - name: Android SDK — NDK
         run: |
           yes | sdkmanager --licenses > /dev/null || true
