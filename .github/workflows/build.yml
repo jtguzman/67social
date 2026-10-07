@@ -180,7 +180,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: app/gen/android/app/build/outputs/apk/**/*.apk
+          path: app/src-tauri/gen/android/app/build/outputs/apk/**/*.apk
 
   # ---------- Mobile: iOS — PAUSED (no signing certificates yet) ----------
   # To enable: add an Apple Developer account ($99/yr), then in this repo's
