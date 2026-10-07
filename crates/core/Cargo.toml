@@ -1,0 +1,39 @@
+[package]
+name = "social67-core"
+description = "67Social shared Rust core: keys, encryption, records, ingest, P2P transport"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[lib]
+name = "social67_core"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+postcard.workspace = true
+ed25519-dalek.workspace = true
+x25519-dalek.workspace = true
+chacha20poly1305.workspace = true
+blake3.workspace = true
+hkdf.workspace = true
+sha2.workspace = true
+rand.workspace = true
+image.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+data-encoding.workspace = true
+
+iroh.workspace = true
+iroh-blobs.workspace = true
+iroh-gossip.workspace = true
+futures.workspace = true
+n0-future.workspace = true
+bytes = "1"
+
+[dev-dependencies]
+tracing-subscriber.workspace = true

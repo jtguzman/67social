@@ -1,0 +1,23 @@
+[package]
+name = "social67-admin"
+description = "67Social operator tool: governance + case-based escrow read with audit log"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "social67-admin"
+path = "src/main.rs"
+
+[dependencies]
+social67-core.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+data-encoding.workspace = true
+
+iroh.workspace = true
+iroh-gossip.workspace = true

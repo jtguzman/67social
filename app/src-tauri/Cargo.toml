@@ -1,0 +1,33 @@
+[package]
+name = "social67-tauri"
+description = "67Social app shell — Tauri 2 wrapping the shared Rust core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[lib]
+name = "social67_tauri_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "social67-tauri"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+social67-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+postcard.workspace = true
+tokio.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+data-encoding.workspace = true
+base64 = "0.22"
+
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"

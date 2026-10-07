@@ -1,0 +1,20 @@
+# Rust
+/target
+
+# Node
+app/node_modules
+app/dist
+
+# Tauri generated mobile projects (CI runs `tauri android init` fresh)
+app/gen/
+
+# 67Social local data (never commit keys or case material!)
+social67-node-data/
+social67-admin-data/
+67social-data/
+case-output/
+*.jsonl.audit
+audit.jsonl
+
+# OS
+.DS_Store
