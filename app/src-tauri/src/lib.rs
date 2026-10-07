@@ -484,6 +484,10 @@ async fn get_invite(state: State<'_, AppState>) -> Result<String, String> {
     Ok(session.invite().encode())
 }
 
+/// App entry. `mobile_entry_point` generates the JNI glue (plugin
+/// response handler etc.) required by the Android/iOS shells — without it
+/// the built .so fails the Tauri runtime-symbol validation.
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
