@@ -1,5 +1,7 @@
 # 67Social — MVP
 
+[![build](https://github.com/jtguzman/67social/actions/workflows/build.yml/badge.svg)](https://github.com/jtguzman/67social/actions/workflows/build.yml)
+
 An Instagram-style social network where images live encrypted across users' own devices instead of
 a central host, are viewable only by people holding the right key, and can be truly unlinked by the
 author. Feedback is reaction-only (1–5 ratings on three emoji scales, no text comments); following
@@ -8,6 +10,13 @@ in each device's local storage.
 
 This repository implements the MVP specified in [`docs/mvp-design-document.md`](docs/mvp-design-document.md):
 one shared Rust core, a headless storage node daemon, and a Tauri 2 + Svelte app.
+
+## CI
+
+Every push to `main` builds (after the test gate): `.deb` + `.AppImage` (Linux), `.msi` + `.exe`
+(Windows), `.dmg` (macOS), and debug-signed APKs (Android, 4 ABIs) — all downloadable from the run's
+artifacts. iOS is paused pending Apple signing certificates; enabling it is a commented block in
+`.github/workflows/build.yml` plus repo secrets.
 
 ## Layout
 
