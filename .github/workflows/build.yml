@@ -153,12 +153,11 @@ jobs:
         uses: taiki-e/install-action@v2
         with:
           tool: cargo-ndk
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Android SDK — NDK
+      - name: Android SDK — licenses + NDK
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "ndk;27.0.12077973" > /dev/null
+          SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKM" --licenses > /dev/null
+          yes | "$SDKM" "ndk;27.0.12077973" > /dev/null
           echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.0.12077973" >> "$GITHUB_ENV"
       - uses: actions/setup-java@v4
         with:
